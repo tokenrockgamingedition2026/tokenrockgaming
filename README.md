@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TokenRockGaming – Compte à rebours GTA 6</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0a0a0a;
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #ff3c00;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      color: #aaa;
+      margin-bottom: 30px;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    .time-box {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 20px 25px;
+      border-radius: 12px;
+      min-width: 90px;
+    }
+
+    .time-box span {
+      display: block;
+      font-size: 2rem;
+      color: #00ffae;
+    }
+
+    .time-box small {
+      display: block;
+      margin-top: 5px;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    a.button {
+      background-color: #ff3c00;
+      color: white;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      transition: 0.3s;
+    }
+
+    a.button:hover {
+      background-color: #ff5f1f;
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 0.85rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <h1>TokenRockGaming</h1>
+  <h2>Compte à rebours jusqu’à la sortie de GTA 6</h2>
+
+  <div class="countdown">
+    <div class="time-box">
+      <span id="days">0</span>
+      <small>Jours</small>
+    </div>
+    <div class="time-box">
+      <span id="hours">0</span>
+      <small>Heures</small>
+    </div>
+    <div class="time-box">
+      <span id="mins">0</span>
+      <small>Minutes</small>
+    </div>
+    <div class="time-box">
+      <span id="secs">0</span>
+      <small>Secondes</small>
+    </div>
+  </div>
+
+  <a href="#" class="button">Découvrir le projet</a>
+
+  <footer>
+    &copy; 2025 TokenRockGaming – Tous droits réservés.
+  </footer>
+
+  <script>
+    // Date cible : sortie officielle GTA 6 – 26 mai 2026 à minuit
+    const targetDate = new Date("May 26, 2026 00:00:00").getTime();
+
+    const countdown = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        clearInterval(countdown);
+        document.querySelector(".countdown").innerHTML = "<p>Le jeu est sorti ! 🎮</p>";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const secs = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").textContent = days;
+      document.getElementById("hours").textContent = hours;
+      document.getElementById("mins").textContent = mins;
+      document.getElementById("secs").textContent = secs;
+    }, 1000);
+  </script>
+</body>
+</html>
