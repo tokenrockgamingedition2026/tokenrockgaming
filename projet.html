@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Découvrez le projet TokenRockGaming : token TRG, cartes cadeaux, gouvernance et oracles." />
+  <title>TokenRockGaming — Le projet</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/logo.png" type="image/png">
+</head>
+<body class="page">
+  <header class="topbar">
+    <a href="index.html" class="logo-link"><img src="assets/logo.png" alt="TRG" class="logo-small"/></a>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="projet.html" aria-current="page">Projet</a>
+      <a href="acheter.html">Acheter</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Le projet TokenRockGaming (TRG)</h1>
+
+    <section>
+      <h2>Concept</h2>
+      <p>TRG est un token conçu pour accompagner la communauté gaming et récompenser la fidélité via des cartes cadeaux (5€, 10€, 15€, 50€, 150€). Le token s'appuie sur des mécanismes d'oracles et d'une réserve d'actifs (or numérique, actifs sélectionnés) — <strong>information indicative, aucune garantie de rendement</strong>.</p>
+    </section>
+
+    <section>
+      <h2>Émission et distribution</h2>
+      <ul>
+        <li><strong>Émission initiale</strong> : 30 000 TRG en circulation au lancement.</li>
+        <li>Réserves planifiées et émissions futures définies par la gouvernance du projet.</li>
+        <li><strong>Taxe mécanique</strong> : gestion des mises à jour des réserves via oracles (paramétrable).</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Cartes cadeaux</h2>
+      <p>Conditions d'accès : détention et période de blocage (ex : 3 mois pour 50 000 TRG, etc.). Les cartes cadeaux sont délivrées <strong>off-chain</strong> selon les règles du projet.</p>
+    </section>
+
+    <div class="actions">
+      <a class="btn-gold" href="acheter.html">Acheter TRG</a>
+      <a class="btn-outline" href="index.html">Retour</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    &copy; <span id="year2"></span> TokenRockGaming — Aucune promesse de rendement.
+  </footer>
+
+  <script>
+    document.getElementById('year2').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
