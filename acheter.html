@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Achetez le token TRG via wallet BSC, Skrill, Paysafecard ou virement." />
+  <title>Acheter TRG — TokenRockGaming</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/logo.png" type="image/png">
+</head>
+<body class="page page-center">
+  <header class="site-header">
+    <img src="assets/logo.png" alt="Logo TRG" class="logo-small" />
+    <h1>Acheter TRG</h1>
+    <p class="lead">Choisissez votre méthode d'achat</p>
+  </header>
+
+  <main>
+    <div class="buy-panel">
+      <p><strong>3 méthodes prises en charge :</strong></p>
+      <ol>
+        <li>Utilisateurs avec wallet <strong>BNB / BSC</strong></li>
+        <li>Clients via <strong>Skrill / Paysafecard</strong> (off-chain)</li>
+        <li>Achat direct via <strong>virement bancaire</strong> (off-chain)</li>
+      </ol>
+
+      <div class="center">
+        <a class="buy-circle" href="#" id="buyNow" title="Instructions d'achat TRG">
+          <img src="assets/logo.png" alt="TRG" />
+        </a>
+      </div>
+
+      <p class="small muted">
+        Le clic ci-dessous <strong>n’exécute pas de paiement automatique</strong> — il ouvre les instructions détaillées.
+      </p>
+
+      <div class="actions">
+        <a class="btn-outline" href="projet.html">En savoir plus</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    &copy; TokenRockGaming — Contact: tokenrockgamingedition2026@gmail.com
+  </footer>
+
+  <script>
+    document.getElementById('buyNow').addEventListener('click', function(e) {
+      e.preventDefault();
+      const instructions = `
+INSTRUCTIONS D'ACHAT TRG
+
+1. Wallet BSC (BNB Smart Chain) :
+   → Envoyez BNB à l'adresse de vente (fournie sur demande sécurisée).
+   → TRG crédités automatiquement après confirmation.
+
+2. Skrill / Paysafecard :
+   → Contactez : tokenrockgamingedition2026@gmail.com
+   → Joignez la preuve de paiement (capture d'écran).
+   → TRG envoyés sous 24h.
+
+3. Virement bancaire :
+   → Demandez les coordonnées IBAN via email.
+   → TRG livrés après réception du fonds.
+
+⚠️ Aucune transaction automatique. Processus manuel sécurisé.
+      `.trim();
+      alert(instructions);
+    });
+  </script>
+</body>
+</html>
