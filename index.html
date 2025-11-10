@@ -1,61 +1,80 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TokenRockGaming – Compte à rebours GTA 6</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0a0a0a;
-      color: #f0f0f0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
-    #countdown {
-      font-size: 2rem;
-      letter-spacing: 2px;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="TokenRockGaming — Compte à rebours avant le lancement du jeu et du token TRG." />
+  <title>TokenRockGaming — Compte à rebours</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/logo.png" type="image/png">
 </head>
-<body>
-  <h1>Compte à rebours GTA 6</h1>
-  <div id="countdown"></div>
+<body class="page page-center">
+  <header class="site-header">
+    <img src="assets/logo.png" alt="Logo TRG" class="logo-small" />
+    <h1>TokenRockGaming</h1>
+    <p class="lead">Compte à rebours — le jeu le plus attendu</p>
+  </header>
+
+  <main>
+    <section class="countdown-wrap">
+      <div class="countdown" aria-live="polite" role="timer">
+        <div class="time-box">
+          <span id="days">0</span>
+          <small>Jours</small>
+        </div>
+        <div class="time-box">
+          <span id="hours">0</span>
+          <small>Heures</small>
+        </div>
+        <div class="time-box">
+          <span id="mins">0</span>
+          <small>Minutes</small>
+        </div>
+        <div class="time-box">
+          <span id="secs">0</span>
+          <small>Secondes</small>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a class="btn-gold" href="projet.html">Découvrir le projet</a>
+        <a class="btn-outline" href="acheter.html">Acheter TRG</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    &copy; <span id="year"></span> TokenRockGaming — Tous droits réservés.
+  </footer>
 
   <script>
-    const targetDate = new Date("November 19, 2026 00:00:00").getTime();
-    const countdownElement = document.getElementById("countdown");
+    const target = new Date("November 19, 2026 00:00:00").getTime();
 
     function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
+      const now = Date.now();
+      const diff = target - now;
 
-      if (distance <= 0) {
-        countdownElement.innerHTML = "🚀 Le grand jour est arrivé !";
+      if (diff <= 0) {
+        document.querySelector('.countdown').innerHTML = `<p class="launched">Le jeu est sorti ! 🎮</p>`;
         clearInterval(interval);
         return;
       }
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const secs = Math.floor((diff % (1000 * 60)) / 1000);
 
-      countdownElement.innerHTML = `${days} j ${hours} h ${minutes} m ${seconds} s`;
+      document.getElementById('days').textContent = days;
+      document.getElementById('hours').textContent = hours;
+      document.getElementById('mins').textContent = mins;
+      document.getElementById('secs').textContent = secs;
     }
 
-    const interval = setInterval(updateCountdown, 1000);
+    document.getElementById('year').textContent = new Date().getFullYear();
     updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
   </script>
 </body>
 </html>
+
